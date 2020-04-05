@@ -91,7 +91,7 @@ To alter the kernel configuration you need to edit lines:
       run: |
         ./build config                    \
                 model=${{ matrix.model }} \
-                name=CRUEL-V3.3           \
+                name=CRUEL-V3.4           \
                 +magisk                   \
                 +nohardening              \
                 +ttl                      \
