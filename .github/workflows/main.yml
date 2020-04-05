@@ -31,7 +31,7 @@ jobs:
       run: |
         ./build config                   \
                 model=${{ matrix.model}} \
-                name=CRUEL-V3.3          \
+                name=CRUEL-V3.4          \
                 +magisk                  \
                 +nohardening             \
                 +ttl                     \
