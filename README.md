@@ -185,9 +185,8 @@ To keep your version of the sources in sync with main tree, please look at one o
 
 ## How to build the kernel locally on your PC
 
-This instructions assumes you are using Linux. Install mkbootimg from osm0sis
-(https://github.com/osm0sis/mkbootimg), heimdall (if you want to flash the
-kernel automatically).
+This instructions assumes you are using Linux. Install heimdall if you want to flash the
+kernel automatically.
 
 Next:
 ```sh
@@ -199,12 +198,9 @@ $ sudo dnf group install "Development Tools"
 $ sudo dnf install ncurses-devel ncurses-compat-libs bc bison flex elfutils-libelf-devel openssl-devel
 
 # Install mkbootimg
-$ wget https://github.com/osm0sis/mkbootimg/archive/master.zip
-$ unzip master.zip
-$ cd mkbootimg-master
-$ sed -i -e 's/-Werror//g' Makefile
-$ make
-$ sudo mv mkbootimg /usr/local/bin/mkbootimg
+$ wget -q https://android.googlesource.com/platform/system/tools/mkbootimg/+archive/refs/heads/master.tar.gz -O - | tar xzf - mkbootimg.py
+$ chmod +x mkbootimg.py
+$ sudo mv mkbootimg.py /usr/local/bin/mkbootimg
 
 # Get the sources
 $ git clone https://github.com/CruelKernel/samsung-exynos9820
