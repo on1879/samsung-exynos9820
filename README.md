@@ -124,6 +124,7 @@ For example:
   apps. Look here for more info: https://source.android.com/devices/tech/debug/jank_jitter
 * bfq - enable bfq I/O scheduler in the kernel.
 * maple - enable maple I/O scheduler in the kernel.
+* fiops - enable fiops I/O scheduler in the kernel.
 * sdfat - use sdfat for exFAT and VFAT filesystems.
 * ntfs - enable ntfs filesystem support (read only).
 * cifs - adds CIFS fs support.
