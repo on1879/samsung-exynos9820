@@ -118,10 +118,10 @@ For example:
 * magisk+canary - integrates canary magisk into the kernel.
 * always_permit - pin SELinux to always use permissive mode. Required on LOS rom.
 * always_enforce - pin SELinux to always use enforcing mode.
-* 300hz - increases kernel clock rate from 250hz to 300hz. Potentially can
-  decrease response time. Disabled by default, untested.
-* 1000hz - increases kernel clock rate from 250hz to 1000hz. Potentially can
-  decrease response time. Disabled by default, untested.
+* 300hz - increase interrupt clock freq from 250hz to 300hz.
+* 1000hz - increase interrupt clock freq from 250hz to 1000hz. Don't use it if you
+  play games. You could benefit from this setting only if you use light/middle-weight
+  apps. Look here for more info: https://source.android.com/devices/tech/debug/jank_jitter
 * bfq - enable bfq I/O scheduler in the kernel.
 * maple - enable maple I/O scheduler in the kernel.
 * sdfat - use sdfat for exFAT and VFAT filesystems.
