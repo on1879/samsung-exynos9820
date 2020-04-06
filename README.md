@@ -122,9 +122,18 @@ For example:
 * 1000hz - increase interrupt clock freq from 250hz to 1000hz. Don't use it if you
   play games. You could benefit from this setting only if you use light/middle-weight
   apps. Look here for more info: https://source.android.com/devices/tech/debug/jank_jitter
-* bfq - enable bfq I/O scheduler in the kernel.
-* maple - enable maple I/O scheduler in the kernel.
-* fiops - enable fiops I/O scheduler in the kernel.
+* bfq - enable BFQ MQ I/O scheduler in the kernel. BFQ is multi-queue scheduler, enabling
+  it requires switching SCSI subsystem to MQ mode. This means you will loose the ability
+  to use cfq and other single-queue schedulers after enabling +bfq.
+* maple - enable MAPLE I/O scheduler in the kernel.
+* fiops - enable FIOPS I/O scheduler in the kernel.
+* sio - enable SIO I/O scheduler in the kernel.
+* zen - enable ZEN I/O scheduler in the kernel.
+* cfq - make CFQ I/O scheduler the default one. CFQ is enabled by default if you are not
+  enabling other schedulers. This switch is relevant only in case you enable multiple
+  schedulers and want cfq to be default one, for example: +maple +fiops will make fiops
+  default scheduler and give you the ability to switch to maple at runtime. Thus: +maple
+  +fiops +zen +cfq will add to the kernel maple, fiops, zen and make cfq scheduler default.
 * sdfat - use sdfat for exFAT and VFAT filesystems.
 * ntfs - enable ntfs filesystem support (read only).
 * cifs - adds CIFS fs support.
